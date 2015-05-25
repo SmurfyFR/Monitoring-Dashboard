@@ -1,0 +1,29 @@
+body {
+    background-color: #5F6164;
+}
+
+#page-wrapper {
+    margin: 0;
+    padding-top: 15px;
+    background-color: #5F6164;
+    border: none;
+}
+
+.panel-dark {
+    background-color: #444;
+    color: #FAFAFA;
+}
+
+.very-huge {
+    font-size: 60px;
+}
+
+
+.progress {
+    margin-bottom: 10px;
+}
+.progress-label {
+    float: left;
+    margin-right: 1em;
+    font-weight: bold;
+}
