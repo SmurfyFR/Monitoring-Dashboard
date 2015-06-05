@@ -93,7 +93,7 @@ dashboardApp.controller('AryaWidgetCtrl', function ($scope, $interval, $http) {
     $scope.fetch = function() {
         $http({
             method: "GET",
-            url: "/api/snmp-arya.php",
+            url: "../api/snmp-arya.php",
         }).success(function(data, status){
             if(status == 200) {
                 $scope.data = angular.fromJson(data);
@@ -138,7 +138,7 @@ dashboardApp.controller('KebabWidgetCtrl', function ($scope, $interval, $http) {
     $scope.fetch = function() {
         $http({
             method: "GET",
-            url: "/api/snmp-kebab.php",
+            url: "../api/snmp-kebab.php",
         }).success(function(data, status){
             if(status == 200) {
                 $scope.data = angular.fromJson(data);
@@ -188,7 +188,7 @@ dashboardApp.controller("PingPHDC3WidgetCtrl", function ($scope, $interval, $fil
     $scope.fetch = function() {
         $http({
             method: "GET",
-            url: "/api/ping.php?host=" + $scope.pingHost,
+            url: "../api/ping.php?host=" + $scope.pingHost,
         }).success(function(rtn, status){
             if(status == 200) {
                 rtn = angular.fromJson(rtn);
