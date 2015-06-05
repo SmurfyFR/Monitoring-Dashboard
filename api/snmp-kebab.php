@@ -24,6 +24,10 @@ $return['load15'] = explode(' ', snmp2_get($host, $community, "iso.3.6.1.4.1.202
     $return['load15'] = substr($return['load15'], 0, -1);
     $return['load15'] = (float) substr($return['load15'], 1);
 
+$ram_total = (float) explode(' ', snmp2_get($host, $community, "iso.3.6.1.4.1.2021.4.5.0"))[1];
+$ram_free = (float) explode(' ', snmp2_get($host, $community, "iso.3.6.1.4.1.2021.4.6.0"))[1];
+$return['ram_percent'] = ceil(($ram_total - $ram_free) / $ram_total * 100);
+
 $return['disk_percent_root'] = (float) explode(' ', snmp2_get($host, $community, ".1.3.6.1.4.1.2021.9.1.9.1"))[1];
 
 // return a json encoded response

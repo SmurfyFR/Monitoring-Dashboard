@@ -116,6 +116,13 @@ dashboardApp.controller('AryaWidgetCtrl', function ($scope, $interval, $http) {
                     $scope.data.disk_percent_hdd1_status = 'danger';
                 }
 
+                if($scope.data.backupsystem == 'OK') {
+                    $scope.data.backupsystem_text = 'OK';
+                    $scope.data.backupsystem_color = 'green';
+                } else {
+                    $scope.data.backupsystem_text = 'ERROR';
+                    $scope.data.backupsystem_color = 'red';
+                }
             }
         });
     }
@@ -141,6 +148,12 @@ dashboardApp.controller('KebabWidgetCtrl', function ($scope, $interval, $http) {
                 } else {
                     $scope.data.disk_percent_root_status = 'danger';
                 }
+
+                if($scope.data.ram_percent < 70) {
+                    $scope.data.ram_percent_status = 'success';
+                } else {
+                    $scope.data.ram_percent_status = 'danger';
+                }
             }
         });
     }
@@ -154,8 +167,8 @@ dashboardApp.controller('KebabWidgetCtrl', function ($scope, $interval, $http) {
 
 dashboardApp.controller("PingPHDC3WidgetCtrl", function ($scope, $interval, $filter, $http) {
     $scope.pingNb = 6; // Number of points
-    $scope.pingHost = 'google.fr' // Remote IP
-    $scope.panicAt = 30; // in ms. If response time is > this value, panel's color will be changed.
+    $scope.pingHost = 'tcardonne.fr' // Remote IP
+    $scope.panicAt = 40; // in ms. If response time is > this value, panel's color will be changed.
 
     // Initialize
     now = $filter('date')(Date.now(), 'mm:ss');
